@@ -1,4 +1,4 @@
 ---
 deployment:
   tasks:
-    - /bin/cp -R dist/* /home/gator/public_html/
+    - /bin/cp -R dist/ /home/gator/public_html/
