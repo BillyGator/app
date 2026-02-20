@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Changa+One:ital@0;1&family=Luckiest+Guy&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+    --primary: 127 52% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 56 100% 54%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 356 100% 39%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 356 100% 39%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 127 52% 50%;
+    --radius: 0.75rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 127 52% 50%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 127 52% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+}
+
+@layer components {
+  /* Font that matches logo style - playful, bold, cartoony */
+  .font-display {
+    font-family: 'Luckiest Guy', 'Changa One', 'Bangers', 'Arial Black', cursive, sans-serif;
+    letter-spacing: 0.02em;
+  }
+  
+  .gator-gradient {
+    background: linear-gradient(180deg, #45B653 0%, #FFF212 100%);
+  }
+  
+  .gator-gradient-reverse {
+    background: linear-gradient(180deg, #FFF212 0%, #45B653 100%);
+  }
+  
+  .gator-text-gradient {
+    background: linear-gradient(135deg, #45B653 0%, #FFF212 50%, #C90010 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Rounded corners with smooth shadow */
+  .gator-border {
+    border: 3px solid #000;
+    border-radius: 1rem;
+    box-shadow: 8px 8px 0 rgba(0,0,0,0.9), 
+                0 4px 20px rgba(0,0,0,0.15);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .gator-border:hover {
+    box-shadow: 12px 12px 0 rgba(0,0,0,0.9), 
+                0 8px 30px rgba(0,0,0,0.2);
+    transform: translate(-2px, -2px);
+  }
+  
+  .gator-border-yellow {
+    border: 3px solid #FFF212;
+    border-radius: 1rem;
+    box-shadow: 8px 8px 0 #000, 
+                0 4px 20px rgba(0,0,0,0.15);
+  }
+  
+  /* Modern button with rounded corners and smooth shadow */
+  .gator-btn {
+    @apply px-8 py-4 font-display text-lg uppercase tracking-wide transition-all duration-300;
+    background: linear-gradient(135deg, #C90010 0%, #a0000c 100%);
+    color: white;
+    border: 3px solid #000;
+    border-radius: 1rem;
+    box-shadow: 6px 6px 0 #000, 
+                0 4px 15px rgba(201, 0, 16, 0.4);
+  }
+  
+  .gator-btn:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 10px 10px 0 #000, 
+                0 8px 25px rgba(201, 0, 16, 0.5);
+    background: linear-gradient(135deg, #45B653 0%, #3a9a45 100%);
+  }
+  
+  .gator-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 3px 3px 0 #000;
+  }
+  
+  /* Modern card with rounded corners */
+  .gator-card {
+    @apply bg-white overflow-hidden transition-all duration-300;
+    border: 3px solid #000;
+    border-radius: 1.5rem;
+    box-shadow: 10px 10px 0 rgba(0,0,0,0.9), 
+                0 8px 30px rgba(0,0,0,0.12);
+  }
+  
+  .gator-card:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: 16px 16px 0 #45B653, 
+                0 12px 40px rgba(0,0,0,0.18);
+  }
+  
+  /* Section titles with 3D effect */
+  .section-title {
+    @apply font-display text-4xl md:text-5xl lg:text-6xl uppercase tracking-tight;
+    text-shadow: 4px 4px 0 #000, 
+                 8px 8px 0 rgba(0,0,0,0.1);
+  }
+  
+  .section-title-white {
+    @apply font-display text-4xl md:text-5xl lg:text-6xl uppercase tracking-tight text-white;
+    text-shadow: 4px 4px 0 #000, 
+                 8px 8px 0 rgba(0,0,0,0.3);
+  }
+  
+  .cartoon-text {
+    @apply font-display;
+    text-shadow: 3px 3px 0 #000, 
+                 6px 6px 0 rgba(0,0,0,0.1);
+  }
+
+  /* Parallax container */
+  .parallax-container {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+
+  /* 3D card effect */
+  .card-3d {
+    transform-style: preserve-3d;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .card-3d:hover {
+    transform: rotateY(5deg) rotateX(5deg) translateZ(20px);
+  }
+
+  /* Floating animation */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(2deg); }
+  }
+
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  /* Glow effect */
+  .glow-green {
+    box-shadow: 0 0 20px rgba(69, 182, 83, 0.5),
+                0 0 40px rgba(69, 182, 83, 0.3);
+  }
+
+  .glow-yellow {
+    box-shadow: 0 0 20px rgba(255, 242, 18, 0.5),
+                0 0 40px rgba(255, 242, 18, 0.3);
+  }
+
+  /* Modern nav link */
+  .nav-link {
+    @apply px-5 py-2.5 font-display uppercase text-sm tracking-wide transition-all duration-300;
+    border-radius: 0.75rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .nav-link::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #45B653 0%, #3a9a45 100%);
+    border-radius: 0.75rem;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+    z-index: -1;
+  }
+  
+  .nav-link:hover::before {
+    transform: scaleX(1);
+  }
+  
+  .nav-link:hover {
+    color: white;
+  }
+
+  /* FAQ accordion styles */
+  .faq-item {
+    @apply border-3 border-black rounded-2xl overflow-hidden mb-4;
+    box-shadow: 6px 6px 0 rgba(0,0,0,0.9);
+    transition: all 0.3s ease;
+  }
+  
+  .faq-item:hover {
+    box-shadow: 8px 8px 0 #45B653;
+  }
+}
+
+@layer utilities {
+  .text-stroke {
+    -webkit-text-stroke: 2px #000;
+  }
+  
+  .text-stroke-white {
+    -webkit-text-stroke: 2px #fff;
+  }
+
+  /* Smooth parallax */
+  .parallax-layer {
+    will-change: transform;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFF212;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #C90010 0%, #a0000c 100%);
+  border: 3px solid #000;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #45B653 0%, #3a9a45 100%);
+}
+
+/* Selection color */
+::selection {
+  background: #FFF212;
+  color: #000;
+}
