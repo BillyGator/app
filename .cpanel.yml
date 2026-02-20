@@ -1,4 +1,5 @@
 ---
 deployment:
   tasks:
-    - /bin/cp -R dist/ /home/gator/public_html/
+    - export DEPLOYPATH=/home/gator/public_html
+    - /bin/cp -R dist/* $DEPLOYPATH
